@@ -1,0 +1,175 @@
+:root {
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Fraunces', serif;
+    --font-weight-regular: 500;
+    --font-weight-bold: 700;
+}
+
+picture, source, img {
+    display: block !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--Cream);
+}
+
+.card {
+    display: flex;
+    border-radius: 10px;
+    max-width: 600px;
+    background-color: var(--White);
+    overflow: hidden;
+    flex-direction: column; 
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 2rem;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+}
+
+.card-content p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    font-family: var(--font-primary);
+}
+
+.perfume-title {
+    letter-spacing: 0.25rem;  
+    text-transform: uppercase;  
+    margin-top: 0;
+}
+
+.product-price {
+    display: flex;
+    align-items: center; 
+    gap: 1rem; 
+}
+
+.price-sale {
+    font-size: 2rem;
+    color: var(--Dark-cyan);
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: var(--Dark-grayish-blue);
+    font-size: 1.5rem; 
+}
+
+.card-content button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--Dark-cyan);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: var(--font-primary);
+}
+
+.card-content button .text {
+    margin-left: 10px;
+    font-size: 1rem; 
+}
+
+.card-content button svg {
+    fill: var(--White);
+}
+
+.card-content button:hover {
+    background-color: hsl(157, 40%, 22%);
+}
+
+p {
+    color: var(--Dark-grayish-blue);
+    font-family: var(--font-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 375px) {
+    .card {
+        flex-direction: column;
+        max-width: 100%;
+        height: auto;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    /* Adjust card-image for mobile */
+    .card-image {
+        display: none; /* Hide the desktop <img> */
+    }
+
+    picture img {
+        width: 100%;
+        display: block; /* Ensure fallback images appear if <source> is not supported */
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card-content h2 {
+        font-size: 2rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .product-price {
+        align-content: left;
+    }
+
+    .price-sale {
+        font-size: 1.5rem;
+    }
+
+    .price-original {
+        font-size: 1.2rem;
+    }
+
+    .card-content button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 376px) {
+    .card {
+        flex-direction: row; /* Switch layout for desktop */
+    }
+}
